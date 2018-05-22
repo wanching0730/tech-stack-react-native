@@ -8,6 +8,7 @@ import { Header } from './components/common';
 const App = () => {
     return (
         // let redux communicate with react
+        // Provider only can serve one child component
         <Provider store={createStore(reducers)}>
             <View>
                 <Header headerText="Tech Stack" />
