@@ -8,8 +8,9 @@ import LibraryList from './components/LibraryList';
 
 const App = () => {
     return (
-        // let redux communicate with react
+        // Provider let redux communicate with react
         // Provider only can serve one child component
+        // Provider store all application states (which is stored in one Store)
         <Provider store={createStore(reducers)}>
             <View>
                 <Header headerText="Tech Stack" />

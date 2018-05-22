@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// to access our application states which had been initialized by reducer
 import { connect } from 'react-redux';
 import { ListView } from 'react-native';
 import ListItem from './ListItem';
