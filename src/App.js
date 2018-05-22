@@ -7,9 +7,11 @@ import { Header } from './components/common';
 
 const App = () => {
     return (
+        // let redux communicate with react
         <Provider store={createStore(reducers)}>
-            <Header headerText="Tech Stack" />
-            <View />
+            <View>
+                <Header headerText="Tech Stack" />
+            </View>
         </Provider>
     );
 };
