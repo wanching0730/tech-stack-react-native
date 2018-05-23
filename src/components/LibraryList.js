@@ -15,6 +15,7 @@ class LibraryList extends Component {
     }
 
     renderRow(library) {
+        // pass library as props to ListItem
         return <ListItem library={library} />;
     }
 

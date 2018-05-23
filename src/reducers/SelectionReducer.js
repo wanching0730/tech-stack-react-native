@@ -1,5 +1,11 @@
 // the dispatched action shown up as second parameter here
-export default (state, action) => {
-    console.log(action);
-    return null;
+// at first, there is no selected Library, so set state to null instead of undefined
+export default (state = null, action) => {
+    switch (action.type) {
+        case 'select_library':
+            return action.payload;
+        default:
+            return state;
+
+    }
 };
