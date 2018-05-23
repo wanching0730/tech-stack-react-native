@@ -8,6 +8,17 @@ import { CardItem } from './common';
 import * as actions from '../actions';
 
 class ListItem extends Component {
+
+    renderDescription() {
+        const { library, selectedLibraryId } = this.props;
+
+        if (library.id === selectedLibraryId) {
+            return (
+                <Text>{library.description}</Text>
+            );
+        }
+    }
+
     render() {
         const { titleStyle } = styles;
         const { id, title } = this.props.library;
@@ -22,6 +33,7 @@ class ListItem extends Component {
                     <CardItem>
                         <Text style={titleStyle}>{title}</Text>
                     </CardItem>
+                    {this.renderDescription()}
                 </View>
             </TouchableWithoutFeedback>
         );
@@ -35,9 +47,13 @@ const styles = {
     }
 };
 
-// first argument is MapStateToProps
+const mapStateToProps = state => {
+    return { selectedLibraryId: state.selectedLibraryId};
+}
+
+// first argument is mapStateToProps
 // this 'connect' method does 2 things:
 // 1st: automatically dispatch all actions in action creator to reducers
 // 2nd: pass all actions to our component as Props
 // current props is selecrLibrary action
-export default connect(null, actions)(ListItem);
+export default connect(mapStateToProps, actions)(ListItem);
